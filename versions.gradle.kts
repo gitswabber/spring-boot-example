@@ -1,0 +1,1 @@
+project.extra["lombok.version"] = "1.18.10"
