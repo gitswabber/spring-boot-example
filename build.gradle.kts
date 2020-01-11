@@ -1,5 +1,6 @@
 plugins {
     java
+    idea
     id("org.springframework.boot") version "2.2.2.RELEASE"
     id("io.spring.dependency-management") version "1.0.8.RELEASE"
 }
@@ -15,9 +16,12 @@ repositories {
 
 dependencies {
     implementation("org.springframework.boot:spring-boot-starter-web")
+    implementation("org.springframework.boot:spring-boot-starter-data-jpa")
 
     compileOnly("org.projectlombok:lombok:${rootProject.extra["lombok.version"]}")
     annotationProcessor("org.projectlombok:lombok:${rootProject.extra["lombok.version"]}")
+
+    implementation("com.h2database:h2:${rootProject.extra["h2.version"]}")
 
     testImplementation("org.springframework.boot:spring-boot-starter-test")
 }
