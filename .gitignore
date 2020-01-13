@@ -2,6 +2,7 @@
 **/build/
 **/bin/
 **/out/
+**/generated/
 **/src/querydsl/
 
 # Ignore Gradle GUI config
