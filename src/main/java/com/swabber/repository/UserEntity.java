@@ -14,8 +14,8 @@ import javax.persistence.Table;
 @Data
 public class UserEntity {
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    private int id;
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private int userId;
 
     @Column(name = "FIRST_NAME", nullable = false)
     private String firstName;
