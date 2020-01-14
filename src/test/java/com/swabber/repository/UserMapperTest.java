@@ -19,7 +19,7 @@ class UserMapperTest {
 
     @BeforeEach
     void setUp() {
-        userEntity.setId(11);
+        userEntity.setUserId(11);
         userEntity.setFirstName("testFirstName");
         userEntity.setLastName("testLastName");
         userEntity.setAge(22);
