@@ -10,6 +10,8 @@ This project is a sample Spring boot project using Gradle.
 #### Other dependencies
 * Lombok
 * MapStruct
+* Guava
+* Junit5
 
 ## How to run
 ~~~~

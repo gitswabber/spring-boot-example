@@ -35,7 +35,6 @@ dependencies {
     testImplementation("org.springframework.boot:spring-boot-starter-test") {
         exclude(group = "junit", module = "junit")
     }
-    testAnnotationProcessor("org.projectlombok:lombok:${rootProject.extra["lombok.version"]}")
 }
 
 configure<JavaPluginConvention> {
