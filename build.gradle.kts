@@ -33,7 +33,7 @@ dependencies {
     implementation("com.google.guava:guava:${rootProject.extra["guava.version"]}")
 
     testImplementation("org.springframework.boot:spring-boot-starter-test") {
-        exclude(group = "junit", module = "junit")
+        exclude(group = "org.junit.vintage", module = "junit-vintage-engine")
     }
 }
 
