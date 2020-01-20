@@ -15,37 +15,37 @@ public class UserController {
 
     private final UserService userService;
 
-    @GetMapping("/users")
+    @GetMapping("/api/v1/users")
     public ResponseEntity<List<User>> getAllUsers() {
         final List<User> allUserList = userService.getAllUserList();
         return new ResponseEntity<>(allUserList, HttpStatus.OK);
     }
 
-    @GetMapping("/users/{id}")
+    @GetMapping("/api/v1/users/{id}")
     public ResponseEntity<User> getUser(@PathVariable int id) {
         final User user = userService.getUser(id);
         return new ResponseEntity<>(user, HttpStatus.OK);
     }
 
-    @PostMapping("/users")
+    @PostMapping("/api/v1/users")
     public ResponseEntity<String> createUser(User user) {
         userService.createUser(user);
         return new ResponseEntity<>(HttpStatus.CREATED);
     }
 
-    @PutMapping("/users/{id}")
+    @PutMapping("/api/v1/users/{id}")
     public ResponseEntity<String> updateUser(@PathVariable int id, User user) {
         userService.updateUser(id, user);
         return new ResponseEntity<>(HttpStatus.CREATED);
     }
 
-    @PatchMapping("/users/{id}")
+    @PatchMapping("/api/v1/users/{id}")
     public ResponseEntity<String> updatedUserAge(@PathVariable int id, @RequestParam int age) {
         userService.updatedUserAge(id, age);
         return new ResponseEntity<>(HttpStatus.OK);
     }
 
-    @DeleteMapping("/users/{id}")
+    @DeleteMapping("/api/v1/users/{id}")
     public ResponseEntity<String> deleteUser(@PathVariable int id) {
         userService.deleteUser(id);
         return new ResponseEntity<>(HttpStatus.OK);
