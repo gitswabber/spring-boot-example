@@ -7,6 +7,7 @@ import com.swabber.repository.UserRepository;
 import org.assertj.core.util.Lists;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
@@ -42,6 +43,7 @@ class UserServiceTest {
         userList.add(new User(3, "Young", "Kim", 28));
     }
 
+    @Disabled
     @Test
     void getAllUserList() {
         when(userRepository.findAll()).thenReturn(userEntityList);
@@ -53,6 +55,7 @@ class UserServiceTest {
         }
     }
 
+    @Disabled
     @Test
     void getUser() {
         when(userRepository.getOne(1)).thenReturn(userEntityList.get(1));

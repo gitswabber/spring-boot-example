@@ -3,6 +3,7 @@ package com.swabber.repository;
 import com.swabber.controller.dto.User;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -25,6 +26,7 @@ class UserMapperTest {
         userEntity.setAge(22);
     }
 
+    @Disabled
     @Test
     void userEntityToUser() {
         final User user = userMapper.userEntityToUser(userEntity);

@@ -4,6 +4,7 @@ import com.google.common.collect.Lists;
 import lombok.extern.slf4j.Slf4j;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest;
@@ -27,6 +28,7 @@ class UserRepositoryTest {
         userRepository.saveAll(userEntityList);
     }
 
+    @Disabled
     @Test
     void findAll() {
         final List<UserEntity> userEntityList = userRepository.findAll();
@@ -34,6 +36,7 @@ class UserRepositoryTest {
         Assertions.assertEquals(userEntityList.size(), 3);
     }
 
+    @Disabled
     @Test
     void findById() {
         final UserEntity firstUserEntity = userRepository.findAll().get(0);
@@ -43,6 +46,7 @@ class UserRepositoryTest {
         log.info("User name : " + userEntity.getLastName() + " " + userEntity.getFirstName() + ", age : " + userEntity.getAge());
     }
 
+    @Disabled
     @Test
     void update() {
         final UserEntity firstUserEntity = userRepository.findAll().get(0);
@@ -52,6 +56,7 @@ class UserRepositoryTest {
         Assertions.assertEquals(updatedUserEntity.getFirstName(), "Lee");
     }
 
+    @Disabled
     @Test
     void delete() {
         final UserEntity firstUserEntity = userRepository.findAll().get(0);
