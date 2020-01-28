@@ -5,6 +5,7 @@ plugins {
     id("io.spring.dependency-management") version "1.0.8.RELEASE"
     id("net.ltgt.apt-idea") version "0.21"
     id("io.freefair.lombok") version "4.1.6"
+    id("com.bmuschko.docker-spring-boot-application") version "6.1.3"
 }
 
 apply(from = "versions.gradle.kts")
@@ -38,8 +39,8 @@ dependencies {
 }
 
 configure<JavaPluginConvention> {
-    sourceCompatibility = JavaVersion.VERSION_13
-    targetCompatibility = JavaVersion.VERSION_13
+    sourceCompatibility = JavaVersion.VERSION_11
+    targetCompatibility = JavaVersion.VERSION_11
 }
 
 tasks.test {
