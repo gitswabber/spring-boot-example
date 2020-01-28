@@ -46,3 +46,17 @@ configure<JavaPluginConvention> {
 tasks.test {
     useJUnitPlatform()
 }
+
+val dockerRegistryUrl: String by extra { "com.swabber" }
+val dockerImageName: String by extra { "spring-boot-example" }
+val dockerImageTag: String by extra { "0.0.1" }
+
+docker {
+    springBootApplication {
+        baseImage.set("openjdk:12-alpine")
+        maintainer.set("doutorking@gmail.com")
+        ports.set(listOf(8080))
+        images.set(setOf("$dockerRegistryUrl/$dockerImageName:$dockerImageTag"))
+//        jvmArgs.set(listOf("-Dspring.profiles.active=dev", "-Xmx1024m"))
+    }
+}
