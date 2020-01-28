@@ -49,8 +49,9 @@ tasks.test {
 
 val dockerRegistryUrl: String by extra { "com.swabber" }
 val dockerImageName: String by extra { "spring-boot-example" }
-val dockerImageTag: String by extra { "0.0.1" }
+val dockerImageTag: String by extra { "0.0.2" }
 
+/*
 docker {
     springBootApplication {
         baseImage.set("openjdk:12-alpine")
@@ -59,4 +60,9 @@ docker {
         images.set(setOf("$dockerRegistryUrl/$dockerImageName:$dockerImageTag"))
 //        jvmArgs.set(listOf("-Dspring.profiles.active=dev", "-Xmx1024m"))
     }
+}*/
+
+tasks.dockerBuildImage {
+    inputDir.dir("./")
+    images.set(setOf("$dockerRegistryUrl/$dockerImageName:$dockerImageTag"))
 }
