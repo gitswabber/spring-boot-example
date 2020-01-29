@@ -1,6 +1,7 @@
 package com.swabber.service;
 
 import com.swabber.controller.dto.User;
+import com.swabber.exception.UserException;
 import com.swabber.repository.UserEntity;
 import com.swabber.repository.UserMapper;
 import com.swabber.repository.UserRepository;
@@ -31,13 +32,13 @@ public class UserService {
     }
 
     public void updateUser(int id, User user) {
-        userRepository.findById(id).orElseThrow();
+        userRepository.findById(id).orElseThrow(() -> new UserException("Failed to find user by Id. user id : " + id));
         final UserEntity updatedUserEntity = userMapper.userToUserEntity(user);
         userRepository.save(updatedUserEntity);
     }
 
     public void updatedUserAge(int id, int age) {
-        final UserEntity updatedUserEntity = userRepository.findById(id).orElseThrow();
+        final UserEntity updatedUserEntity = userRepository.findById(id).orElseThrow(() -> new UserException("Failed to update user. user id : " + id));
         updatedUserEntity.setAge(age);
         userRepository.save(updatedUserEntity);
     }

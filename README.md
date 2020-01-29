@@ -2,9 +2,10 @@
 This project is a sample Spring boot project using Gradle.
 
 ## Environment
-* JDK 13
+* JDK 8
 * Spring boot 2.2.2.RELEASE
 * Gradle 6.0.1
+* Docker
 #### Database
 * H2
 #### Other dependencies

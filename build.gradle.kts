@@ -3,6 +3,7 @@ plugins {
     idea
     id("org.springframework.boot") version "2.2.2.RELEASE"
     id("io.spring.dependency-management") version "1.0.8.RELEASE"
+    id("net.ltgt.apt") version "0.21"
     id("net.ltgt.apt-idea") version "0.21"
     id("io.freefair.lombok") version "4.1.6"
     id("com.bmuschko.docker-spring-boot-application") version "6.1.3"
@@ -39,8 +40,8 @@ dependencies {
 }
 
 configure<JavaPluginConvention> {
-    sourceCompatibility = JavaVersion.VERSION_11
-    targetCompatibility = JavaVersion.VERSION_11
+    sourceCompatibility = JavaVersion.VERSION_1_8
+    targetCompatibility = JavaVersion.VERSION_1_8
 }
 
 tasks.test {
@@ -51,18 +52,18 @@ val dockerRegistryUrl: String by extra { "com.swabber" }
 val dockerImageName: String by extra { "spring-boot-example" }
 val dockerImageTag: String by extra { "0.0.2" }
 
-/*
 docker {
     springBootApplication {
-        baseImage.set("openjdk:12-alpine")
+        baseImage.set("openjdk:8-alpine")
         maintainer.set("doutorking@gmail.com")
         ports.set(listOf(8080))
         images.set(setOf("$dockerRegistryUrl/$dockerImageName:$dockerImageTag"))
 //        jvmArgs.set(listOf("-Dspring.profiles.active=dev", "-Xmx1024m"))
     }
-}*/
+}
 
+/*
 tasks.dockerBuildImage {
     inputDir.dir("./")
     images.set(setOf("$dockerRegistryUrl/$dockerImageName:$dockerImageTag"))
-}
+}*/
