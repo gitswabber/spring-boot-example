@@ -13,3 +13,5 @@ spring:
     console:
       enabled: true
       path: /h2
+
+frontend.host: http://localhost:3000
